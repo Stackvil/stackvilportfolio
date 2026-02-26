@@ -7,6 +7,10 @@ const ThemeSwitcher = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { themes, currentTheme, setTheme } = useTheme();
 
+    if (Object.keys(themes).length <= 1) {
+        return null;
+    }
+
     return (
         <div className="fixed top-24 right-6 z-[9999]">
             <motion.button
